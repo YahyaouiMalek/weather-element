@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="weather-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>I will soon show you [[city]]'s Weather :)</h2>
+  </template>
+
+  <script>
+    /**
+     * `weather-element`
+     * This element displays the weather
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class WeatherElement extends Polymer.Element {
+      static get is() { return 'weather-element'; }
+      static get properties() {
+        return {
+          city: {
+            type: String,
+            value: 'Tunisia'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(WeatherElement.is, WeatherElement);
+  </script>
+</dom-module>
